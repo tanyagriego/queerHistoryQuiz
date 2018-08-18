@@ -9,11 +9,34 @@
         src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
         crossorigin="anonymous"></script>
-
 </head>
 <body>
     <header></header>
+<main role="main">
+    <section class="startPage">
+        <div class="instructions"></div>
+        <button class="beginQuiz" type="button">Start Quiz!</button>  
+    </section>  
 
+    <section>
+        <div class="quiz">
+            <img class="currentImage">
+            <form class="mainQuizSection">
+            //Questions go here//
+            <button class="submit" type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="progressAndStats">
+            <div class="progress"></div>
+            <div class="score"></div>
+        </div>
+    </section>
+
+    <section class= "finalPage">
+        <div class="results"></div>
+        <button class="playAgain">Play Again!</button>
+    </section>
+</main>
 
     <script src="quiz.js"></script>
 </body>
