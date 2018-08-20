@@ -8,22 +8,31 @@ const quizData = [{
 },
 ]
 
-//This poplulates with header with text 
-$("header").text("Queer History!");
+//Score keeper
+let score = 0;
+
+//Hide the quiz and play again button initially 
+$(".quiz").hide()
+$(".finalPage").hide()
+
+//This poplulates the header and instructions upon page load
+$("header").text("Queer History");
 $(".instructions").text("A quiz about queer history. Are. You. Ready?!");
 
-//This counts the total of what??
-let counter = quizData.length;
+//When user clicks 'Start Quiz!' hide startPage and header and also show quiz
+//     $(".beginQuiz").click(function(){
+//          $(".startPage").hide();
+//          $("header").hide();
+//          $(".quiz").show();
+// });
 
-//When user clicks 'Start Quiz!' hide the startPage
+//The same as above, written with an arrow function
+    $(".beginQuiz").on('click', () => {
+        $(".startPage").hide();
+        $("header").hide();
+        $(".quiz").show();
+    });
 
-    // $(".beginQuiz").click(function() {
-    //     $(".startPage").hide();
-
-
-// Hide each page and show only the page that the user is currently engaging with.
-//These items should be inside a function that populates the page with questions and
-//hides the start page 
 //Populate form with question and answer choices... so I need to show the div
 //and also add photos somewhere here
 // function showData (quizData) {
@@ -34,5 +43,3 @@ let counter = quizData.length;
 
 //     }
 // }
-
-// showData();
