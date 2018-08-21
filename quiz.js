@@ -6,6 +6,14 @@ const quizData = [{
     options:["June 26, 2015", "November 12, 2008","May 19, 2014", "December 6, 2012"],
     answer: "June 26, 2015", 
 },
+{   
+    question: "What does each color on the rainbow flag represent?",
+    options: [  "Red: Blood, Orange: Hope, Yellow: Sex, Green: Harmony and Peace, Blue: Truth, Purple: Power",
+                "Red: Life, Orange: Healing, Yellow: Sunlight, Green: Nature, Blue: Harmony and Peace, Purple: Spirit",
+                "Red: Energy, Orange: Happiness, Yellow: Warmth, Green: Truth, Blue: Faith, Purple: Harmony and Peace",
+                "Red: Love, Orange: Happiness, Yellow: Hope, Green: Strength, Blue: Wisdom, Purple: Strength"],
+    answer :  "Red: Life, Orange: Healing, Yellow: Sunlight, Green: Nature, Blue: Harmony and Peace, Purple: Tranquility",
+},
 ]
 
 //Score keeper
@@ -32,6 +40,8 @@ $(".instructions").text("A quiz about queer history. Are. You. Ready?!");
         $("header").hide();
         $(".quiz").show();
     });
+
+
 
 //Populate form with question and answer choices... so I need to show the div
 //and also add photos somewhere here
