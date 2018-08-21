@@ -1,7 +1,8 @@
 'use strict';
 
 //This array of objects holds all questions, answer options, and correct answers. 
-const quizData = [{
+const quizData = [
+{
     question: "On what date did the U.S. Supreme Court require all states to grant same-sex marriages in all states?",
     options:["June 26, 2015", "November 12, 2008","May 19, 2014", "December 6, 2012"],
     answer: "June 26, 2015", 
@@ -43,13 +44,19 @@ $(".instructions").text("A quiz about queer history. Are. You. Ready?!");
 
 
 
-//Populate form with question and answer choices... so I need to show the div
-//and also add photos somewhere here
-// function showData (quizData) {
-//     for (let i = 0; quizData.length; i++) {
-//         $("header").hide();
-//         $(".startPage").hide();
-//         $(".quiz").append(i);
+//Populate form with questions 
+// quizData.forEach (function (dataItem) {
+//     $(".question").text(dataItem.question);
+// })
 
-//     }
-// }
+//This is the same as above, written as an arrow function
+//This loops through each (forEach) object (dataItem) on the quizData array, 
+//takes the text from the question in that dataItem, and populates it to the question div
+quizData.forEach ((dataItem) => {
+    $(".question").text(dataItem.question)
+
+//Populate form with answer choices
+    $(".answers").text(dataItem.options)
+})
+
+
