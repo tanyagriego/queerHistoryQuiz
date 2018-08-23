@@ -40,23 +40,38 @@ $(".instructions").text("A quiz about queer history. Are. You. Ready?!");
         $(".startPage").hide();
         $("header").hide();
         $(".quiz").show();
+        populateQuestion();
     });
 
-
+ let questionNumber = 0;
 
 //Populate form with questions 
-// quizData.forEach (function (dataItem) {
-//     $(".question").text(dataItem.question);
-// })
 
-//This is the same as above, written as an arrow function
-//This loops through each (forEach) object (dataItem) on the quizData array, 
-//takes the text from the question in that dataItem, and populates it to the question div
-quizData.forEach ((dataItem) => {
-    $(".question").text(dataItem.question)
+function populateQuestion() {
+    $(".question").text(quizData[questionNumber].question)
 
-//Populate form with answer choices
-    $(".answers").text(dataItem.options)
+//Populate form with answer choices— Do not understand 
+   for (let i = 0; i < 4; i++) {
+     $(`label[for='answer${i + 1}']`).text(quizData[questionNumber].options[i])
+   }
+};
+
+//When user clicks submit, 
+$('.submit').click(function(event){
+    event.preventDefault();
+    let correct = true;
+    //tally score
+    if (correct) {
+        ++score;
+    } else {
+    }
+    console.log(score);
+    //populate with next question (increment question number)
+    ++questionNumber;
+    populateQuestion();
 })
+// and give feedback of correct/incorrect, 
+
+
 
 
