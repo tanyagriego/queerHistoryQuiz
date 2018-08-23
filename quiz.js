@@ -12,7 +12,7 @@ const quizData = [
     options: [  "Red: Blood, Orange: Hope, Yellow: Sex, Green: Harmony and Peace, Blue: Truth, Purple: Power",
                 "Red: Life, Orange: Healing, Yellow: Sunlight, Green: Nature, Blue: Harmony and Peace, Purple: Spirit",
                 "Red: Energy, Orange: Happiness, Yellow: Warmth, Green: Truth, Blue: Faith, Purple: Harmony and Peace",
-                "Red: Love, Orange: Happiness, Yellow: Hope, Green: Strength, Blue: Wisdom, Purple: Strength"],
+                "Red: Love, Orange: Sex, Yellow: Hope, Green: Strength, Blue: Wisdom, Purple: Strength"],
     answer :  "Red: Life, Orange: Healing, Yellow: Sunlight, Green: Nature, Blue: Harmony and Peace, Purple: Tranquility",
 },
 ]
@@ -56,7 +56,7 @@ function populateQuestion() {
    }
 };
 
-//When user clicks submit, 
+//When user clicks submit
 $('.submit').click(function(event){
     event.preventDefault();
     let correct = true;
@@ -70,7 +70,19 @@ $('.submit').click(function(event){
     ++questionNumber;
     populateQuestion();
 })
-// and give feedback of correct/incorrect, 
+// Give feedback of correct/incorrect 
+
+    const correctAnswer = quizData.answer;
+    const checked = $("input:checked").val()
+    const selectedAnswer = $(`label[for=${checked}]`).text()
+
+ function answerFeedback (){
+    if (correctAnswer === selectedAnswer) {
+     return "Correct"
+    } else {
+     return "Incorrect";
+    }
+ };
 
 
 
