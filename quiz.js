@@ -5,7 +5,11 @@ const quizData = [
 {
     question: "On what date did the U.S. Supreme Court require all states to grant same-sex marriages in all states?",
     options:["June 26, 2015", "November 12, 2008","May 19, 2014", "December 6, 2012"],
-    answer: "June 26, 2015", 
+    correct_answer: "June 26, 2015", 
+    incorect_answer: "Incorrect",
+    //photo by Nick Karvounis on Unsplash
+    image: "rings.jpeg", 
+    alt: "two hands wearing wedding rings"
 },
 {   
     question: "What does each color on the rainbow flag represent?",
@@ -13,7 +17,11 @@ const quizData = [
                 "Red: Life, Orange: Healing, Yellow: Sunlight, Green: Nature, Blue: Harmony and Peace, Purple: Spirit",
                 "Red: Energy, Orange: Happiness, Yellow: Warmth, Green: Truth, Blue: Faith, Purple: Harmony and Peace",
                 "Red: Love, Orange: Sex, Yellow: Hope, Green: Strength, Blue: Wisdom, Purple: Strength"],
-    answer :  "Red: Life, Orange: Healing, Yellow: Sunlight, Green: Nature, Blue: Harmony and Peace, Purple: Tranquility",
+    correct_answer :  "Red: Life, Orange: Healing, Yellow: Sunlight, Green: Nature, Blue: Harmony and Peace, Purple: Tranquility",
+    incorect_answer: "Incorrect",
+    //photo by Peter Hershey
+    image: "flag.jpg",
+    alt: "rainbow flag"
 },
 ]
 
@@ -48,7 +56,8 @@ $(".instructions").text("A quiz about queer history. Are. You. Ready?!");
 //Populate form with questions 
 
 function populateQuestion() {
-    $(".question").text(quizData[questionNumber].question)
+    $(".question").text(quizData[questionNumber].question);
+    $(".currentImage").attr("src",quizData.image);
 
 //Populate form with answer choices— Do not understand 
    for (let i = 0; i < 4; i++) {
