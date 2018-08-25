@@ -54,11 +54,12 @@ $(".instructions").text("A quiz about queer history. Are. You. Ready?!");
         populateQuestion();
     });
 
+//This variable stores the current index of the question number in the array
  let questionNumber = 0;
+//This variable represents accessing the current question number inside of the quizData array
  let currentQuestionObject = quizData[questionNumber];
 
-//Populate form with questions and images
-
+//Populate form with questions and images and hide empty feedback div
 function populateQuestion() {
     $("feedback").hide();
     $(".question").text(currentQuestionObject.question);
@@ -72,7 +73,14 @@ function populateQuestion() {
 
 //When user clicks submit
 $('.submit').click(function(event){
+    //Check for the value of whatever the user selected
+    const checked = $("input:checked").val()
+    //Get the text from the value user selected (above)
+    const selectedAnswer = $(`label[for=${checked}]`).text()
+
+    //Prevent dafault behavior (do not actually submit quiz)
     event.preventDefault();
+    
     let correct = true;
     //tally score
     if (correct) {
@@ -80,30 +88,43 @@ $('.submit').click(function(event){
     } else {
     }
     console.log(score);
+    
     //populate with next question (increment question number)
     //remove existing question elements from DOM and insert feedback to the feedback div
     $(".question").hide();
     $("ul").hide();
-    $(".feedback").show().text(currentQuestionObject.incorrect_feedback);
+    
+    //This variable holds the answerFeedback function which determines whether a user's answer
+    //matched the correct answer or not. The selectedAnswer represents what the user selected
+    //and the currentQuestionObject is the object (data) of whatever questions the user 
+    //is currently on
+    const feedbackString = answerFeedback(selectedAnswer, currentQuestionObject); 
+   
+    //This shows the feedback div and populates it with text explaining the user either was
+    //correct or incorrect
+    $(".feedback").show().text(feedbackString);
+    //This times the duration that feedback is shown. The feedback disappears after 2 seconds.
     setTimeout(function(){
+    //This repopulates the questions div and hides the feedback after 2 seconds,  
         $("ul").show();
         $(".question").show();
         $(".feedback").hide();
     }, 2000)
+    //This increases the questionNumber which means it moves the user onto the next question
     ++questionNumber;
+    //This calls the function that populates the question div with questions and options 
+    //(the objects in the quizData array)
     populateQuestion();
 })
-// Give feedback of correct/incorrect 
-
-    const correctAnswer = quizData.answer;
-    const checked = $("input:checked").val()
-    const selectedAnswer = $(`label[for=${checked}]`).text()
-
- function answerFeedback (){
-    if (correctAnswer === selectedAnswer) {
-     return 
+//This function compares the users selected answer to the actual correct answer 
+//From Jon example: questionObject is the pizza object in this case. questionObject is 
+//taking currrentQuestionObject (in other words, currrentQuestionObject is being renamed
+//"currrentQuestionObject" like "myObject" was being renamed "pizza")
+ function answerFeedback (selectedAnswer, questionObject){
+    if (questionObject.correct_answer === selectedAnswer) {
+     return questionObject.correct_feedback;
     } else {
-     return
+     return questionObject.incorrect_feedback;
     }
  };
 
