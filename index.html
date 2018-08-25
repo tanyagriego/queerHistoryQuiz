@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Queer History</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Queer history quiz app">
+    <link rel="stylesheet" href="styles.css">
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <header></header>
+<main role="main">
+    <!-- The Start Page -->
+    <section class="startPage">
+        <div class="instructions"></div>
+        <button class="beginQuiz" type="button">Start Quiz!</button>  
+    </section>  
+
+    <!-- The question/feedback page -->
+    <section>
+        <div class="quiz">
+            <img class="currentImage"> <!--images go here//-->
+            <form class="mainQuizSection">
+                <div class="question"></div>
+                <ul>
+                    <li>
+                        <input name="answers" value="answer1"type="radio" action="" required method="">
+                        <label for="answer1"></label>
+                    </li>
+                    <li>
+                        <input name="answers" value="answer2" type="radio" action="" required method="">
+                        <label for="answer2"></label>
+                    </li>
+                    <li>
+                        <input name="answers" value="answer3" type="radio" action="" required method="">
+                        <label for="answer3"></label>
+                    </li>
+                    <li>
+                        <input name="answers" value="answer4" type="radio" action="" required method="">
+                        <label for="answer4"></label>
+                    </li>
+                </ul>
+                <button class="submit" type="submit">Submit</button>
+            </form>
+        </div>
+        
+        <div class="progressAndStats">
+            <div class="progress"></div>
+            <div class="score"></div>
+        </div>
+    </section>
+
+    <!-- The final page -->
+    <section class= "finalPage">
+        <div class="results"></div>
+        <button class="playAgain">Play Again!</button>
+    </section>
+</main>
+
+    <script src="quiz.js"></script>
+</body>
+</html>
