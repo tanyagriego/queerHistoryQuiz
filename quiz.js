@@ -49,6 +49,7 @@ $(".instructions").text("A quiz about queer history. Are. You. Ready?!");
     $(".beginQuiz").on('click', () => {
         $(".startPage").hide();
         $("header").hide();
+        $("feedback").hide();
         $(".quiz").show();
         populateQuestion();
     });
@@ -59,6 +60,7 @@ $(".instructions").text("A quiz about queer history. Are. You. Ready?!");
 //Populate form with questions and images
 
 function populateQuestion() {
+    $("feedback").hide();
     $(".question").text(currentQuestionObject.question);
     $(".currentImage").attr("src", currentQuestionObject.image);
 
@@ -79,6 +81,15 @@ $('.submit').click(function(event){
     }
     console.log(score);
     //populate with next question (increment question number)
+    //remove existing question elements from DOM and insert feedback to the feedback div
+    $(".question").hide();
+    $("ul").hide();
+    $(".feedback").show().text(currentQuestionObject.incorrect_feedback);
+    setTimeout(function(){
+        $("ul").show();
+        $(".question").show();
+        $(".feedback").hide();
+    }, 2000)
     ++questionNumber;
     populateQuestion();
 })
@@ -90,9 +101,9 @@ $('.submit').click(function(event){
 
  function answerFeedback (){
     if (correctAnswer === selectedAnswer) {
-     return "Correct"
+     return 
     } else {
-     return "Incorrect";
+     return
     }
  };
 
