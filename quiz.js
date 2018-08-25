@@ -5,8 +5,9 @@ const quizData = [
 {
     question: "On what date did the U.S. Supreme Court require all states to grant same-sex marriages in all states?",
     options:["June 26, 2015", "November 12, 2008","May 19, 2014", "December 6, 2012"],
-    correct_answer: "June 26, 2015", 
-    incorect_answer: "Incorrect",
+    correct_answer: "June 26, 2015",
+    correct_feedback: "Correct! Some other information", 
+    incorrect_feedback: "Incorrect. The answer is June 26th, 2018",
     //photo by Nick Karvounis on Unsplash
     image: "images/rings.jpg", 
     alt: "two hands wearing wedding rings"
@@ -18,7 +19,8 @@ const quizData = [
                 "Red: Energy, Orange: Happiness, Yellow: Warmth, Green: Truth, Blue: Faith, Purple: Harmony and Peace",
                 "Red: Love, Orange: Sex, Yellow: Hope, Green: Strength, Blue: Wisdom, Purple: Strength"],
     correct_answer :  "Red: Life, Orange: Healing, Yellow: Sunlight, Green: Nature, Blue: Harmony and Peace, Purple: Tranquility",
-    incorect_answer: "Incorrect",
+    correct_feedback: "Correct! Some other information",
+    incorrect_feedback: "Incorrect. The answer is June 26th, 2018",
     //photo by Peter Hershey
     image: "images/flag.jpg",
     alt: "rainbow flag"
