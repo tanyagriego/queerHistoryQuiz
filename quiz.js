@@ -8,7 +8,7 @@ const quizData = [
     correct_answer: "June 26, 2015", 
     incorect_answer: "Incorrect",
     //photo by Nick Karvounis on Unsplash
-    image: "rings.jpeg", 
+    image: "images/rings.jpg", 
     alt: "two hands wearing wedding rings"
 },
 {   
@@ -20,7 +20,7 @@ const quizData = [
     correct_answer :  "Red: Life, Orange: Healing, Yellow: Sunlight, Green: Nature, Blue: Harmony and Peace, Purple: Tranquility",
     incorect_answer: "Incorrect",
     //photo by Peter Hershey
-    image: "flag.jpg",
+    image: "images/flag.jpg",
     alt: "rainbow flag"
 },
 ]
@@ -52,12 +52,13 @@ $(".instructions").text("A quiz about queer history. Are. You. Ready?!");
     });
 
  let questionNumber = 0;
+ let currentQuestionObject = quizData[questionNumber];
 
-//Populate form with questions 
+//Populate form with questions and images
 
 function populateQuestion() {
-    $(".question").text(quizData[questionNumber].question);
-    $(".currentImage").attr("src",quizData.image);
+    $(".question").text(currentQuestionObject.question);
+    $(".currentImage").attr("src", currentQuestionObject.image);
 
 //Populate form with answer choices— Do not understand 
    for (let i = 0; i < 4; i++) {
