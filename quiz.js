@@ -1,5 +1,10 @@
 'use strict';
 
+$(document).ready(function () {
+    $(".playAgain").click(function () {
+        location.readload(true);
+});
+
 //This array of objects holds all questions, answer options, and correct answers. 
 const quizData = [
 {
@@ -31,7 +36,7 @@ const quizData = [
 let score = 0;
 
 //Hide the quiz and play again button initially 
-$(".quiz").hide()
+$("#quiz").hide()
 $(".finalPage").hide()
 
 //This poplulates the header and instructions upon page load
@@ -50,26 +55,28 @@ $(".instructions").text("A quiz about queer history. Are. You. Ready?!");
         $(".startPage").hide();
         $("header").hide();
         $("feedback").hide();
-        $(".quiz").show();
+        $("#quiz").show();
         populateQuestion();
     });
 
 //This variable stores the current index of the question number in the array
  let questionNumber = 0;
 //This variable represents accessing the current question number inside of the quizData array
- let currentQuestionObject = quizData[questionNumber];
+let currentQuestionObject = quizData[questionNumber];
 
 //Populate form with questions and images and hide empty feedback div
 function populateQuestion() {
     $("feedback").hide();
-    $(".question").text(currentQuestionObject.question);
+    $("#question").text(currentQuestionObject.question);
     $(".currentImage").attr("src", currentQuestionObject.image);
 
-//Populate form with answer choices— Do not understand 
+//Populate form with answer choices 
    for (let i = 0; i < 4; i++) {
      $(`label[for='answer${i + 1}']`).text(quizData[questionNumber].options[i])
    }
 };
+
+
 
 //When user clicks submit
 $('.submit').click(function(event){
@@ -81,6 +88,7 @@ $('.submit').click(function(event){
     //Prevent dafault behavior (do not actually submit quiz)
     event.preventDefault();
     
+    //Something here needs to happen
     let correct = true;
     //tally score
     if (correct) {
@@ -91,7 +99,9 @@ $('.submit').click(function(event){
     
     //populate with next question (increment question number)
     //remove existing question elements from DOM and insert feedback to the feedback div
-    $(".question").hide();
+    $("#question").hide();
+    $(".currentImage").hide();
+    $(".submit").hide();
     $("ul").hide();
     
     //This variable holds the answerFeedback function which determines whether a user's answer
@@ -107,13 +117,15 @@ $('.submit').click(function(event){
     setTimeout(function(){
     //This repopulates the questions div and hides the feedback after 2 seconds,  
         $("ul").show();
-        $(".question").show();
+        $("#question").show();
+        $(".currentImage").show();
         $(".feedback").hide();
     }, 2000)
     //This increases the questionNumber which means it moves the user onto the next question
-    ++questionNumber;
+
     //This calls the function that populates the question div with questions and options 
     //(the objects in the quizData array)
+    ++questionNumber;
     populateQuestion();
 })
 //This function compares the users selected answer to the actual correct answer 
@@ -127,7 +139,6 @@ $('.submit').click(function(event){
      return questionObject.incorrect_feedback;
     }
  };
-
-
+});
 
 
