@@ -25,7 +25,7 @@ const quizData = [
                 "Red: Love, Orange: Sex, Yellow: Hope, Green: Strength, Blue: Wisdom, Purple: Strength"],
     correct_answer :  "Red: Life, Orange: Healing, Yellow: Sunlight, Green: Nature, Blue: Harmony and Peace, Purple: Tranquility",
     correct_feedback: "Correct! Some other information",
-    incorrect_feedback: "Incorrect. The answer is June 26th, 2018",
+    incorrect_feedback: "Incorrect. Insert correct answer",
     //photo by Peter Hershey
     image: "images/flag.jpg",
     alt: "rainbow flag"
@@ -56,6 +56,9 @@ $(".instructions").text("A quiz about queer history. Are. You. Ready?!");
         $("header").hide();
         $("feedback").hide();
         $("#quiz").show();
+        //Display what number of question the user is on
+        $(".progress").show().text("question number");
+        $(".score").show().text("score");
         populateQuestion();
     });
 
@@ -67,16 +70,14 @@ let currentQuestionObject = quizData[questionNumber];
 //Populate form with questions and images and hide empty feedback div
 function populateQuestion() {
     $("feedback").hide();
-    $("#question").text(currentQuestionObject.question);
-    $(".currentImage").attr("src", currentQuestionObject.image);
+    $("#question").text(quizData[questionNumber].question);
+    $(".currentImage").attr("src", quizData[questionNumber].image);
 
 //Populate form with answer choices 
    for (let i = 0; i < 4; i++) {
      $(`label[for='answer${i + 1}']`).text(quizData[questionNumber].options[i])
    }
 };
-
-
 
 //When user clicks submit
 $('.submit').click(function(event){
@@ -119,15 +120,18 @@ $('.submit').click(function(event){
         $("ul").show();
         $("#question").show();
         $(".currentImage").show();
+        $(".submit").show();
         $(".feedback").hide();
     }, 2000)
     //This increases the questionNumber which means it moves the user onto the next question
 
     //This calls the function that populates the question div with questions and options 
     //(the objects in the quizData array)
+    
     ++questionNumber;
     populateQuestion();
 })
+
 //This function compares the users selected answer to the actual correct answer 
 //From Jon example: questionObject is the pizza object in this case. questionObject is 
 //taking currrentQuestionObject (in other words, currrentQuestionObject is being renamed
@@ -142,3 +146,6 @@ $('.submit').click(function(event){
 });
 
 
+
+
+//Display the users score
