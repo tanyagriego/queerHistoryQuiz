@@ -79,6 +79,8 @@ let score = 0;
 //Hide the quiz and play again button initially 
 $("#quiz").hide()
 $(".finalPage").hide()
+$(".progress").hide()
+$(".score").hide()
 
 //This poplulates the header and instructions upon page load
 $("header").text("Queer History");
@@ -105,23 +107,24 @@ $(".instructions").text("A quiz about queer history. Are. You. Ready?!");
 
 //This variable stores the current index of the question number in the array
  let questionNumber = 0;
-//This variable represents accessing the current question number inside of the quizData array
-let currentQuestionObject = quizData[questionNumber];
 
 //Populate form with questions and images and hide empty feedback div
 function populateQuestion() {
+    //This variable represents accessing the current question number inside of the quizData array
+    let currentQuestionObject = quizData[questionNumber];
     $("feedback").hide();
-    $("#question").text(quizData[questionNumber].question);
-    $(".currentImage").attr("src", quizData[questionNumber].image);
+    $("#question").text(currentQuestionObject.question);
+    $(".currentImage").attr("src", currentQuestionObject.image);
 
 //Populate form with answer choices 
    for (let i = 0; i < 4; i++) {
-     $(`label[for='answer${i + 1}']`).text(quizData[questionNumber].options[i])
+     $(`label[for='answer${i + 1}']`).text(currentQuestionObject.options[i])
    }
 };
 
 //When user clicks submit
 $('.submit').click(function(event){
+    let currentQuestionObject = quizData[questionNumber];
     //Check for the value of whatever the user selected
     const checked = $("input:checked").val()
     //Get the text from the value user selected (above)
@@ -180,6 +183,8 @@ $('.submit').click(function(event){
 //taking currrentQuestionObject (in other words, currrentQuestionObject is being renamed
 //"currrentQuestionObject" like "myObject" was being renamed "pizza")
  function answerFeedback (selectedAnswer, questionObject){
+    console.log('Question Object:', questionObject)
+    console.log('Selected answer:', selectedAnswer)
     if (questionObject.correct_answer === selectedAnswer) {
      return questionObject.correct_feedback;
     } else {
@@ -190,3 +195,6 @@ $('.submit').click(function(event){
 
 //Need some code that shows the finalPage div once the last question has been asked
 //$(".finalPage").show();
+
+// //function displayProgress () {
+//   $(".progress").text(`Question ${quizData[]}`)  
