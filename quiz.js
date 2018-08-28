@@ -20,11 +20,11 @@ const quizData = [
 {   
     question: "What does each color on the rainbow flag represent?",
     options: [  "Red: Blood, Orange: Hope, Yellow: Sex, Green: Harmony and Peace, Blue: Truth, Purple: Power",
-                "Red: Life, Orange: Healing, Yellow: Sunlight, Green: Nature, Blue: Harmony and Peace, Purple: Spirit",
+                "Red: Life, Orange: Healing, Yellow: Sunlight, Green: Nature, Blue: Harmony and Peace, Purple: Tranquility",
                 "Red: Energy, Orange: Happiness, Yellow: Warmth, Green: Truth, Blue: Faith, Purple: Harmony and Peace",
                 "Red: Love, Orange: Sex, Yellow: Hope, Green: Strength, Blue: Wisdom, Purple: Strength"],
     correct_answer :  "Red: Life, Orange: Healing, Yellow: Sunlight, Green: Nature, Blue: Harmony and Peace, Purple: Tranquility",
-    correct_feedback: "Correct! Some other information",
+    correct_feedback: "Correct! la la la",
     incorrect_feedback: "Incorrect. Insert correct answer",
     //photo by Peter Hershey
     image: "images/flag.jpg",
@@ -104,6 +104,8 @@ $('.submit').click(function(event){
     $(".currentImage").hide();
     $(".submit").hide();
     $("ul").hide();
+    $(".progress").hide().text("question number");
+    $(".score").hide().text("score");
     
     //This variable holds the answerFeedback function which determines whether a user's answer
     //matched the correct answer or not. The selectedAnswer represents what the user selected
@@ -140,12 +142,10 @@ $('.submit').click(function(event){
     if (questionObject.correct_answer === selectedAnswer) {
      return questionObject.correct_feedback;
     } else {
-     return questionObject.incorrect_feedback;
+     return quizData[questionNumber].incorrect_feedback;
     }
  };
 });
 
-
-
-
-//Display the users score
+//Need some code that shows the finalPage div once the last question has been asked
+//$(".finalPage").show();
