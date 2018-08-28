@@ -1,7 +1,11 @@
 quiz {
-    c
+    
 }
 
 ul {
     list-style-type: none;
+}
+
+.currentImage {
+    max-width: 300px;
 }
