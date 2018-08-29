@@ -73,9 +73,6 @@ const quizData = [
 
 ]
 
-//Score keeper
-let score = 0;
-
 //Hide the quiz and play again button initially 
 $("#quiz").hide()
 $(".finalPage").hide()
@@ -84,7 +81,7 @@ $(".score").hide()
 
 //This poplulates the header and instructions upon page load
 $("header").text("Queer History");
-$(".instructions").text("A quiz about queer history. Are. You. Ready?!");
+$(".instructions").text("Progress toward equality comes when people work together toward a common goal. Some compelling text here.");
 
 //When user clicks 'Start Quiz!' hide startPage and header and also show quiz
 //     $(".beginQuiz").click(function(){
@@ -95,13 +92,17 @@ $(".instructions").text("A quiz about queer history. Are. You. Ready?!");
 
 //The same as above, written with an arrow function
     $(".beginQuiz").on('click', () => {
+        questionNumber = 0;
+        let score = 0;
         $(".startPage").hide();
         $("header").hide();
         $("feedback").hide();
         $("#quiz").show();
+
         //Display what number of question the user is on
-        $(".progress").show().text("question number");
-        $(".score").show().text("score");
+        // $(".progress").show().text("question number");
+        // $(".score").show().text("score");
+        displayProgress(questionNumber, score);
         populateQuestion();
     });
 
@@ -135,6 +136,8 @@ $('.submit').click(function(event){
     
     //Something here needs to happen
     let correct = true;
+    //Score keeper
+    let score = 0;  
     //tally score
     if (correct) {
         ++score;
@@ -148,8 +151,8 @@ $('.submit').click(function(event){
     $(".currentImage").hide();
     $(".submit").hide();
     $("ul").hide();
-    $(".progress").hide().text("question number");
-    $(".score").hide().text("score");
+    $(".progress").hide();
+    $(".score").hide();
     
     //This variable holds the answerFeedback function which determines whether a user's answer
     //matched the correct answer or not. The selectedAnswer represents what the user selected
@@ -168,23 +171,24 @@ $('.submit').click(function(event){
         $(".currentImage").show();
         $(".submit").show();
         $(".feedback").hide();
+        ++questionNumber;
+        populateQuestion();
+        displayProgress(questionNumber, score);
+    
     }, 2000)
     //This increases the questionNumber which means it moves the user onto the next question
 
     //This calls the function that populates the question div with questions and options 
     //(the objects in the quizData array)
-    
-    ++questionNumber;
-    populateQuestion();
-})
+    })
 
 //This function compares the users selected answer to the actual correct answer 
 //From Jon example: questionObject is the pizza object in this case. questionObject is 
 //taking currrentQuestionObject (in other words, currrentQuestionObject is being renamed
 //"currrentQuestionObject" like "myObject" was being renamed "pizza")
  function answerFeedback (selectedAnswer, questionObject){
-    console.log('Question Object:', questionObject)
-    console.log('Selected answer:', selectedAnswer)
+    //console.log('Question Object:', questionObject)
+    //console.log('Selected answer:', selectedAnswer)
     if (questionObject.correct_answer === selectedAnswer) {
      return questionObject.correct_feedback;
     } else {
@@ -196,5 +200,8 @@ $('.submit').click(function(event){
 //Need some code that shows the finalPage div once the last question has been asked
 //$(".finalPage").show();
 
-// //function displayProgress () {
-//   $(".progress").text(`Question ${quizData[]}`)  
+ function displayProgress (currentQuestionNumber, score) {
+     $(".progress").show().text(`Question ${currentQuestionNumber+1}/10`); 
+     console.log('Quiz Status:', currentQuestionNumber)
+     $(".score").show().text(`Correct: ${score}/10`);
+ }
