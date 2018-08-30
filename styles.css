@@ -1,11 +1,7 @@
-quiz {
-    
-}
-
 ul {
     list-style-type: none;
 }
 
 .currentImage {
-    max-width: 300px;
+    max-width: 500px;
 }
