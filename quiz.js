@@ -2,8 +2,15 @@
 
 $(document).ready(function () {
     $(".playAgain").click(function () {
-        location.readload(true);
+        location.readload(true);  
 });
+
+let score = 0;
+
+//This variable stores the current index of the question number in the array
+let questionNumber = 0;
+
+let currentQuestionObject;
 
 //This array of objects holds all questions, answer options, and correct answers. 
 const quizData = [
@@ -93,7 +100,7 @@ $(".instructions").text("Progress toward equality comes when people work togethe
 //The same as above, written with an arrow function
     $(".beginQuiz").on('click', () => {
         questionNumber = 0;
-        let score = 0;
+        // let score = 0;
         $(".startPage").hide();
         $("header").hide();
         $("feedback").hide();
@@ -102,17 +109,14 @@ $(".instructions").text("Progress toward equality comes when people work togethe
         //Display what number of question the user is on
         // $(".progress").show().text("question number");
         // $(".score").show().text("score");
-        displayProgress(questionNumber, score);
+        displayProgress(questionNumber);
         populateQuestion();
     });
-
-//This variable stores the current index of the question number in the array
- let questionNumber = 0;
 
 //Populate form with questions and images and hide empty feedback div
 function populateQuestion() {
     //This variable represents accessing the current question number inside of the quizData array
-    let currentQuestionObject = quizData[questionNumber];
+    currentQuestionObject = quizData[questionNumber];
     $("feedback").hide();
     $("#question").text(currentQuestionObject.question);
     $(".currentImage").attr("src", currentQuestionObject.image);
@@ -121,11 +125,11 @@ function populateQuestion() {
    for (let i = 0; i < 4; i++) {
      $(`label[for='answer${i + 1}']`).text(currentQuestionObject.options[i])
    }
-};
+}; 
 
 //When user clicks submit
 $('.submit').click(function(event){
-    let currentQuestionObject = quizData[questionNumber];
+    currentQuestionObject = quizData[questionNumber];
     //Check for the value of whatever the user selected
     const checked = $("input:checked").val()
     //Get the text from the value user selected (above)
@@ -135,15 +139,15 @@ $('.submit').click(function(event){
     event.preventDefault();
     
     //Something here needs to happen
-    let correct = true;
-    //Score keeper
-    let score = 0;  
-    //tally score
-    if (correct) {
-        ++score;
-    } else {
-    }
-    console.log(score);
+    // let correct = true;
+    // //Score keeper
+    // let score = 0;  
+    // //tally score
+    // if (correct) {
+    //     ++score;
+    // } else {
+    // }
+    // console.log(score);
     
     //populate with next question (increment question number)
     //remove existing question elements from DOM and insert feedback to the feedback div
@@ -180,28 +184,32 @@ $('.submit').click(function(event){
 
     //This calls the function that populates the question div with questions and options 
     //(the objects in the quizData array)
-    })
+})
 
 //This function compares the users selected answer to the actual correct answer 
 //From Jon example: questionObject is the pizza object in this case. questionObject is 
 //taking currrentQuestionObject (in other words, currrentQuestionObject is being renamed
 //"currrentQuestionObject" like "myObject" was being renamed "pizza")
  function answerFeedback (selectedAnswer, questionObject){
-    //console.log('Question Object:', questionObject)
+    console.log('Question Object:', questionObject);
     //console.log('Selected answer:', selectedAnswer)
     if (questionObject.correct_answer === selectedAnswer) {
-     return questionObject.correct_feedback;
+        ++score;
+        console.log("correct answer", score)
+        return questionObject.correct_feedback;
     } else {
-     return quizData[questionNumber].incorrect_feedback;
+        console.log("incorrect answer", score)
+        return quizData[questionNumber].incorrect_feedback;
     }
  };
-});
 
 //Need some code that shows the finalPage div once the last question has been asked
 //$(".finalPage").show();
 
- function displayProgress (currentQuestionNumber, score) {
+ function displayProgress (currentQuestionNumber) {
      $(".progress").show().text(`Question ${currentQuestionNumber+1}/10`); 
-     console.log('Quiz Status:', currentQuestionNumber)
+     //console.log('Quiz Status:', currentQuestionNumber)
      $(".score").show().text(`Correct: ${score}/10`);
  }
+
+});// closes doc.ready function
