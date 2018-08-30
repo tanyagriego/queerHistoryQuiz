@@ -2,25 +2,6 @@ ul {
     list-style-type: none;
 }
 
-* {
-    box-sizing: border-box;
-}
-
-.quiz {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
 .currentImage {
     max-width: 500px;
 }
-
-/* .progress, .score{
-    border-style: solid;
-    border-radius: 1000px;
-    border-width: 1px;
-    border-style: solid;
-    max-width: 50px;
-} */
