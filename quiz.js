@@ -103,8 +103,8 @@ let currentQuestionObject;
         $(".results").hide(); 
         $(".restart").show();
 
+        ++questionNumber;
         if (questionNumber < quizData.length) {
-            ++questionNumber;
             populateQuestion();
             displayProgress(questionNumber, score);
         } else {
