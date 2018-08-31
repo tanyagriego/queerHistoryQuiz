@@ -1,7 +1,7 @@
 'use strict';
 
 $(document).ready(function () {
-    $(".playAgain").click(function () {
+    $(".restart").click(function () {
         location.reload();  
 });
 
