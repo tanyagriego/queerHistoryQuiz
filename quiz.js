@@ -1,26 +1,26 @@
 'use strict';
 
 $(document).ready(function () {
-    $(".playAgain").click(function () {
-        location.readload(true);  
+    $(".restart").click(function () {
+        location.reload();  
 });
 
 //Variable to keep score
 let score = 0;
 //Variable tp store the current index of the question number in the array
-let questionNumber = 0;
+let questionNumber;
 //
 let currentQuestionObject;
 
-    //Hide the quiz and play again button initially 
-    $("#quiz").hide()
-    $(".finalPage").hide()
-    $(".progress").hide()
-    $(".score").hide()
+    //Hide the quiz and play again button initially (can do in CSS with display:none)
+    $("#quiz").hide();
+    $(".finalPage").hide();
+    $(".progress").hide();
+    $(".score").hide();
 
     //This poplulates the header and instructions upon page load
     $("header").text("Queer History");
-    $(".instructions").text("Progress toward equality comes when people work together toward a common goal. Some compelling text here.");
+    $(".instructions").text("Some compelling text here.");
 
     function hideQuizData () {
         $("#question").hide();
@@ -48,7 +48,9 @@ let currentQuestionObject;
     function populateQuestion() {
         //This variable represents accessing the current question number inside of the quizData array
         currentQuestionObject = quizData[questionNumber];
+        console.log(quizData[questionNumber]);
         $("feedback").hide();
+        console.log(currentQuestionObject);
         $("#question").text(currentQuestionObject.question);
         $(".currentImage").attr("src", currentQuestionObject.image);
 
@@ -77,9 +79,6 @@ let currentQuestionObject;
     function answerFeedback (selectedAnswer, questionObject){
         //console.log('Question Object:', questionObject);
         //console.log('Selected answer:', selectedAnswer) 
-        if (questionNumber === 5 ) {
-            finalPage();
-        }
          if (questionObject.correct_answer === selectedAnswer) {
             ++score;
             //console.log("correct answer", score)
@@ -100,10 +99,20 @@ let currentQuestionObject;
         $(".currentImage").show();
         $(".submit").show();
         $(".feedback").hide();
+        $(".finalPage").hide();
+        $(".results").hide(); 
+        $(".restart").show();
+
         ++questionNumber;
+        if (questionNumber < quizData.length) {
+            populateQuestion();
+            displayProgress(questionNumber, score);
+        } else {
+            finalPage();
+            hideQuizData();
+        }
+
         console.log("Question number", questionNumber);
-        populateQuestion();
-        displayProgress(questionNumber, score);
     }, 2000)
 })
 
