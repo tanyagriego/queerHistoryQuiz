@@ -12,7 +12,7 @@ const quizData = [
         alt: "two hands wearing wedding rings"
     },
     {   
-        question: "What does each color on the rainbow flag represent?",
+        question: "In 1978, artist Gilbert Baker designed the rainbow flag. What does each color on the rainbow flag represent?",
         options: [  "Red: Blood, Orange: Hope, Yellow: Sex, Green: Harmony and Peace, Blue: Truth, Purple: Power",
                     "Red: Life, Orange: Healing, Yellow: Sunlight, Green: Nature, Blue: Harmony and Peace, Purple: Tranquility",
                     "Red: Energy, Orange: Happiness, Yellow: Warmth, Green: Truth, Blue: Faith, Purple: Harmony and Peace",
