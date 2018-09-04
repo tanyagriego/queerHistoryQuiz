@@ -21,7 +21,7 @@ let currentQuestionObject;
     //This poplulates the header and instructions upon page load
     $("header").text("Queer History");
     $(".instructions").text("Some compelling text here.");
-    $(".coverImage").attr("src","images/cover.jpg");;
+    // $(".coverImage").attr("src","images/cover.jpg");;
 
     function hideQuizData () {
         $("#question").hide();

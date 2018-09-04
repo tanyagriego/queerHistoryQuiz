@@ -20,7 +20,7 @@ ul {
     align-items: center;
 }
 
-li, submit {
+li {
     display: block;
     border: 1px solid black;
     margin: 30px auto;
@@ -28,6 +28,21 @@ li, submit {
     width: 65%;
     background-color: #eeeeee;
 }
+
+.submit {
+    display: block;
+    border: 1px solid black;
+    margin: 30px auto;
+    padding: 15px;
+    width: 15%;
+    background-color: #eeeeee;
+}
+
+.submit:hover {
+    background-color: rgb(155, 8, 155)
+}
+
+
 
 li:hover {
     background-color: #06BC9B;
@@ -51,3 +66,12 @@ li:hover {
     /* bottom: 0px; */
     z-index: -1;;
 }
+
+.progressAndStats {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+ .score {
+    margin-left: auto;
+} 
