@@ -21,6 +21,7 @@ let currentQuestionObject;
     //This poplulates the header and instructions upon page load
     $("header").text("Queer History");
     $(".instructions").text("Some compelling text here.");
+    // $(".coverImage").attr("src","images/cover.jpg");;
 
     function hideQuizData () {
         $("#question").hide();
@@ -117,9 +118,9 @@ let currentQuestionObject;
 })
 
     function displayProgress (currentQuestionNumber) {
-        $(".progress").show().text(`Question ${currentQuestionNumber+1}/10`); 
+        $(".progress").show().text(`Question ${currentQuestionNumber+1}/5`); 
         //console.log('Quiz Status:', currentQuestionNumber)
-        $(".score").show().text(`Correct: ${score}/10`);
+        $(".score").show().text(`Correct: ${score}/5`);
     }
 
     //Need some code that shows the finalPage div once the last question has been asked
@@ -129,7 +130,7 @@ let currentQuestionObject;
         //show final page
         $(".finalPage").show();
         //display final score
-        $(".results").show().text(`You got ${score}/10 questions current`);
+        $(".results").show().text(`You got ${score}/5 questions correct`);
         //give option to restart quiz 
         $(".restart").show();
     }

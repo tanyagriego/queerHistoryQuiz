@@ -1,3 +1,10 @@
+* {
+    /* background-color: #03A678;
+    color: #fff;
+    font-weight: bold; */
+    font-family: Montserrat,sans-serif;
+}
+
 ul {
     list-style-type: none;
 }
@@ -13,7 +20,7 @@ ul {
     align-items: center;
 }
 
-li, submit {
+li {
     display: block;
     border: 1px solid black;
     margin: 30px auto;
@@ -22,7 +29,49 @@ li, submit {
     background-color: #eeeeee;
 }
 
+.submit {
+    display: block;
+    border: 1px solid black;
+    margin: 30px auto;
+    padding: 15px;
+    width: 15%;
+    background-color: #eeeeee;
+}
+
+.submit:hover {
+    background-color: rgb(155, 8, 155)
+}
+
+
+
 li:hover {
     background-color: #06BC9B;
     cursor: pointer;
 }
+
+.coverImage {
+    /* Full height */
+    height: 100%; 
+    width: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    /* right: 0px; */
+    /* bottom: 0px; */
+    z-index: -1;;
+}
+
+.progressAndStats {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+ .score {
+    margin-left: auto;
+} 
