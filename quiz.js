@@ -38,6 +38,7 @@ let currentQuestionObject;
         $(".startPage").hide();
         $("header").hide();
         $("feedback").hide();
+        $(".coverImage").hide();
         $("#quiz").show();
 
         //Display what number of question the user is on
