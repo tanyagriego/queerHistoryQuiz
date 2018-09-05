@@ -9,6 +9,16 @@ ul {
     list-style-type: none;
 }
 
+.instructions {
+    margin-top: 50px;
+}
+
+header {
+    margin-top: 50px;
+    font-size: 250%;
+    font-weight: bold;
+}
+
 .currentImage {
     max-width: 500px;
     margin: 30px auto;
@@ -38,11 +48,21 @@ li {
     background-color: #eeeeee;
 }
 
+.beginQuiz {
+    display: block;
+    border: 1px solid black;
+    margin: 15px auto;
+    padding: 15px;
+    background-color: #eeeeee;
+}
+
+.beginQuiz:hover {
+    background-color: rgba(245, 131, 8, 0.94)
+}
+
 .submit:hover {
     background-color: rgb(155, 8, 155)
 }
-
-
 
 li:hover {
     background-color: #06BC9B;
@@ -53,17 +73,16 @@ li:hover {
     /* Full height */
     height: 100%; 
     width: 100%;
-
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; 
     position: absolute;
     left: 0px;
     top: 0px;
+    bottom: 0px; 
+    right: 0px; 
     bottom: 0px;
-    /* right: 0px; */
-    /* bottom: 0px; */
     z-index: -1;;
 }
 
