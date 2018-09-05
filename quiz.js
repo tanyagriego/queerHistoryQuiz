@@ -20,8 +20,8 @@ let currentQuestionObject;
 
     //This poplulates the header and instructions upon page load
     $("header").text("Queer History");
-    $(".instructions").text("Some compelling text here.");
-    // $(".coverImage").attr("src","images/cover.jpg");;
+    $(".instructions").text("All movements have a history. Learn about ours here.");
+    $(".coverImage").attr("src","images/cover.jpg");;
 
     function hideQuizData () {
         $("#question").hide();
@@ -38,6 +38,7 @@ let currentQuestionObject;
         $(".startPage").hide();
         $("header").hide();
         $("feedback").hide();
+        $(".coverImage").hide();
         $("#quiz").show();
 
         //Display what number of question the user is on
