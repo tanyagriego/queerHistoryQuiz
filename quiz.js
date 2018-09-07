@@ -20,11 +20,13 @@ let currentQuestionObject;
 
     //This poplulates the header and instructions upon page load
     $("header").text("Queer History");
-    $(".instructions").text("All movements have a history. Learn about ours here.");
-    $(".coverImage").attr("src","images/cover.jpg");;
+    $(".instructions").text("All movements have a history.");
+    $(".tagline").text("Learn about ours here.");
+    // $(".coverImage").attr("src","images/cover.jpg");
 
     function hideQuizData () {
         $("#question").hide();
+        $("#supporting_info").hide();
         $(".currentImage").hide();
         $(".submit").hide();
         $("ul").hide();
@@ -38,7 +40,7 @@ let currentQuestionObject;
         $(".startPage").hide();
         $("header").hide();
         $("feedback").hide();
-        $(".coverImage").hide();
+        // $(".coverImage").hide();
         $("#quiz").show();
 
         //Display what number of question the user is on
@@ -50,9 +52,10 @@ let currentQuestionObject;
     function populateQuestion() {
         //This variable represents accessing the current question number inside of the quizData array
         currentQuestionObject = quizData[questionNumber];
-        console.log(quizData[questionNumber]);
+        // console.log(quizData[questionNumber]);
         $("feedback").hide();
-        console.log(currentQuestionObject);
+        // console.log(currentQuestionObject);
+        $("#supporting_info").text(currentQuestionObject.supporting_info);
         $("#question").text(currentQuestionObject.question);
         $(".currentImage").attr("src", currentQuestionObject.image);
 
@@ -97,6 +100,7 @@ let currentQuestionObject;
     //This repopulates the questions div and hides the feedback after 2 seconds,
     setTimeout(function(){  
         $("ul").show();
+        $("#supporting_info").show();
         $("#question").show();
         $(".currentImage").show();
         $(".submit").show();
