@@ -61,7 +61,7 @@ let currentQuestionObject;
 
         //Populate form with answer choices 
         for (let i = 0; i < 4; i++) {
-         $(`label[for='answer${i + 1}']`).text(currentQuestionObject.options[i])
+         $(`#label${i + 1}`).text(currentQuestionObject.options[i])
     }
 }; 
     //When user clicks submit
