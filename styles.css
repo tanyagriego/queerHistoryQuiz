@@ -39,6 +39,7 @@ header {
 li > label {
     display: block;
     border: 1px solid black;
+    border-radius: 4px;
     margin: 30px auto;
     padding: 15px;
     width: 65%;
