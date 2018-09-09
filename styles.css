@@ -87,24 +87,6 @@ li > label:hover {
     margin-left: auto;
 } 
 
-.startPage {
-    background: url("images/coverTry.jpg");
-    /* Full height */
-    height: 100%; 
-    width: 100%;
-    /* Center and scale the image nicely */
-    background-position: center;
-    /* background-repeat: no-repeat; */
-    background-size: cover; 
-    position: absolute;
-    left: 0px; 
-    bottom: 0px;  
-    top: 0px; 
-    right: 0px; 
-    bottom: 0px; 
-    z-index: -1;
-    /* opacity: 0.3; */
-}
 
 #supporting_info {
     padding: 10px 20px;
