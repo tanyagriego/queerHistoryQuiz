@@ -13,7 +13,10 @@ ul {
     margin: 120px auto;
     width: 25%;
     color: #6200FF;
-    font-size: 30px;
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 1px 1px white;
+    te; */
 }
 
 .tagline {
@@ -78,7 +81,7 @@ li > label {
 }
 
 .submit:hover {
-    background-color: #53DD6C
+    background-color: rgb(155, 8, 155)
 }
 
 li > label:hover {
@@ -126,53 +129,26 @@ li > label:hover {
     border: 4px solid red;
 }
 
-/* .finalPage {
+.finalPage {
     border: 4px solid black;
     border-radius: 4px;
     background-color: #06BC9B;
     opacity: 0.2px;
     padding: 30px;
     margin: 100px auto;
-}  */
+}
 
 .restart {
     display: block;
-    border: 1px solid white;
+    border: 1px solid #eeeeee;
     border-radius: 4px;
-    margin: -100px auto;
+    margin: 15px auto;
     padding: 15px;
-    background-color: #48A9A6;
-    font-size: 15px;
-    color: ghostwhite;
+    background-color: #eeeeee;
 }
+
 
 .restart:hover {
-    background-color: #53DD6C
-}
-
-.finalPhoto {
-        background: url("images/flag.jpg");
-        /* Full height */
-        height: 100%; 
-        width: 100%;
-        /* Center and scale the image nicely */
-        background-position: center;
-        /* background-repeat: no-repeat; */
-        background-size: cover; 
-        position: absolute;
-        left: 0px; 
-        bottom: 0px;  
-        top: 0px; 
-        right: 0px; 
-        bottom: 0px; 
-        z-index: -1;
-        opacity: 0.3; 
-}
-
-.results {
-    margin: 150px auto;
-    width: -7%;
-    color: #6200FF;
-    font-size: 20px;
-    font-weight: bold;
+    background-color: rgb(155, 8, 155)
+ 
 }
