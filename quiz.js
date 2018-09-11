@@ -21,8 +21,6 @@ $(document).ready(function() {
 	//This poplulates the header and instructions upon page load
 	$('header').text('Queer History');
 	$('.instructions').text('All movements have a history.');
-	$('.tagline').text('Learn about ours here.');
-	// $(".coverImage").attr("src","images/cover.jpg");
 
 	function hideQuizData() {
 		$('#question').hide();
@@ -62,7 +60,7 @@ $(document).ready(function() {
 
 		//Populate form with answer choices
 		for (let i = 0; i < 4; i++) {
-			$(`#label${i + 1}`).text(currentQuestionObject.options[i]);
+   			$(`#label${i + 1}`).text(currentQuestionObject.options[i]);
 		}
     }
 
@@ -71,63 +69,69 @@ $(document).ready(function() {
 		currentQuestionObject = quizData[questionNumber];
 		//Check for the value of whatever the user selected
 		const checked = $('input:checked').val();
-		//Get the text from the value user selected (above)
-		const selectedAnswer = $(`#label${checked}`).text();
+		if(checked!=undefined){
+			//Get the text from the value user selected (above)
+			const selectedAnswer = $(`#label${checked}`).text();
 
-		//Prevent dafault behavior (do not actually submit quiz)
-		event.preventDefault();
-		//Hide all quiz data
-		hideQuizData();
+			//Prevent dafault behavior (do not actually submit quiz)
+			event.preventDefault();
+			//Hide all quiz data
+			hideQuizData();
 
-		//This variable holds the answerFeedback function which determines whether a user's answer
-		//matched the correct answer or not.
-		const feedbackString = answerFeedback(selectedAnswer, currentQuestionObject);
-		//This function compares the users selected answer to the actual correct answer and increases the score if correct.
-		function answerFeedback(selectedAnswer, questionObject) {
-			//console.log('Question Object:', questionObject);
-			//console.log('Selected answer:', selectedAnswer)
-			if (questionObject.correct_answer === selectedAnswer) {
-                // user selected correct answer
-                $('.feedback').addClass("feedback_correct");
-				++score;
-				//console.log("correct answer", score)
-				return questionObject.correct_feedback;
-			} else {
-                // User selected incorrect answer
-                //console.log("incorrect answer", score)
-                $('.feedback').addClass("feedback_incorrect");
-				return quizData[questionNumber].incorrect_feedback;
-			}
+			//This variable holds the answerFeedback function which determines whether a user's answer
+			//matched the correct answer or not.
+			const feedbackString = answerFeedback(selectedAnswer, currentQuestionObject);
+			
+
+			//This shows the feedback div and populates it with text explaining the user either was
+			//correct or incorrect
+			$('.feedback').show().text(feedbackString);
+			//This repopulates the questions div and hides the feedback after 2 seconds,
+			setTimeout(function() {
+				$('ul').show();
+				$('#supporting_info').show();
+				$('#question').show();
+				$('.currentImage').show();
+				$('.submit').show();
+				$('.feedback').hide();
+				$('.finalPage').hide();
+				$('.results').hide();
+				$('.feedback').removeClass("feedback_correct feedback_incorrect");
+				$('.restart').show();
+
+				++questionNumber;
+				if (questionNumber < quizData.length) {
+					populateQuestion();
+					displayProgress(questionNumber, score);
+				} else {
+					finalPage();
+					hideQuizData();
+				}
+
+				console.log('Question number', questionNumber);
+			}, 6000);
+		} else {
+			alert('Please select an answer');
 		}
-
-		//This shows the feedback div and populates it with text explaining the user either was
-		//correct or incorrect
-		$('.feedback').show().text(feedbackString);
-		//This repopulates the questions div and hides the feedback after 2 seconds,
-		setTimeout(function() {
-			$('ul').show();
-			$('#supporting_info').show();
-			$('#question').show();
-			$('.currentImage').show();
-			$('.submit').show();
-			$('.feedback').hide();
-			$('.finalPage').hide();
-            $('.results').hide();
-            $('.feedback').removeClass("feedback_correct feedback_incorrect");
-			$('.restart').show();
-
-			++questionNumber;
-			if (questionNumber < quizData.length) {
-				populateQuestion();
-				displayProgress(questionNumber, score);
-			} else {
-				finalPage();
-				hideQuizData();
-			}
-
-			console.log('Question number', questionNumber);
-		}, 2000);
 	});
+
+	//This function compares the users selected answer to the actual correct answer and increases the score if correct.
+	function answerFeedback(selectedAnswer, questionObject) {
+		//console.log('Question Object:', questionObject);
+		//console.log('Selected answer:', selectedAnswer)
+		if (questionObject.correct_answer === selectedAnswer) {
+			// user selected correct answer
+			$('.feedback').addClass("feedback_correct");
+			++score;
+			//console.log("correct answer", score)
+			return questionObject.correct_feedback;
+		} else {
+			// User selected incorrect answer
+			//console.log("incorrect answer", score)
+			$('.feedback').addClass("feedback_incorrect");
+			return quizData[questionNumber].incorrect_feedback;
+		}
+	}
 
 	function displayProgress(currentQuestionNumber) {
 		$('.progress').show().text(`Question ${currentQuestionNumber + 1}/5`);

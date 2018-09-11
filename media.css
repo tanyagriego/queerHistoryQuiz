@@ -18,42 +18,24 @@
         z-index: -1;
         opacity: 0.3; 
     }
-    .instructions {
-        margin-top: 120px;
-        /* margin: 120px auto; */
-        width: 58%;
-        color: black;
-    }
-    
-    .tagline {
-        margin-top: -100px;
-        width: 50%;
-        color: black;
-
-    }
-    
+    /* .instructions {
+        margin: 120px auto;
+        width: 25%;
+        color: #48A9A6;
+        font-size: 50px;  
+    } */
+        
     header {
         margin-top: 50px;
         font-size: 250%;
         font-weight: bold;
     }
-
-    .beginQuiz {
-        display: block;
-        border: 1px solid black;
-        border-radius: 4px;
-        margin: 15px auto;
-        margin-top: -100px;
-        padding: 15px;
-        background-color: #eeeeee;
-    }
-    
-  }
+}
   
   @media only screen and (min-width: 640px) {
   
-    .startPage {
-        background: url("images/DesktopCover.jpg");
+    .coverPhoto {
+        background: url("images/coverRoad.jpg");
         /* Full height */
         height: 100%; 
         width: 100%;
@@ -70,21 +52,32 @@
         z-index: -1;
         opacity: 0.3; 
     }
+
+    .startPage {
+        display: flex;
+        flex-direction: column;
+        max-width: 500;
+        max-width: 2000;
+        text-align: center;
+        width: 100%;
+        margin: -190px auto;
+    
+    }
+/*     
     .instructions {
         margin: 120px auto;
         width: 25%;
-    }
-    
-    .tagline {
-        margin-top: -100px;
-        width: 25%;
-    }
-    
+        color: black;
+    } */
+        
     header {
+        display: flex;
         margin-top: 50px;
         font-size: 250%;
         font-weight: bold;
+        padding: 30px auto;
+        margin: 100px auto;
     }
     
-    }
+    
   

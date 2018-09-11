@@ -15,6 +15,7 @@ ul {
     color: #7A306C;
     font-size: 50px;
     font-weight: bold;
+    text-shadow: black;
     text-shadow: 2px 2px white;
 }
 
@@ -70,7 +71,7 @@ li > label {
     border-radius: 4px;
     margin: -100px auto;
     padding: 15px;
-    background-color: #48A9A6;
+    background-color: #F78154;
     font-size: 30px;
 }
 
