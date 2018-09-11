@@ -1,4 +1,9 @@
 @media only screen and (max-width: 640px) {
+    #quiz {
+        max-width: 100%;
+    }
+    
+    
     .coverPhoto {
         background: url("images/cover.jpg");
         /* Full height */
