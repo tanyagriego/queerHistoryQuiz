@@ -19,8 +19,8 @@ $(document).ready(function() {
 	$('.score').hide();
 
 	//This poplulates the header and instructions upon page load
-	$('header').text('Queer History');
-	$('.instructions').text('All movements have a history.');
+	$('header').text('All movements have a history');
+	$('.instructions').text('Learn about ours here');
 
 	function hideQuizData() {
 		$('#question').hide();
@@ -109,7 +109,7 @@ $(document).ready(function() {
 				}
 
 				console.log('Question number', questionNumber);
-			}, 6000);
+			}, 1000);
 		} else {
 			alert('Please select an answer');
 		}
@@ -146,8 +146,13 @@ $(document).ready(function() {
 		//show final page
 		$('.finalPage').show();
 		//display final score
-		$('.results').show().text(`You got ${score}/5 questions correct`);
+		if (score >= 4) {
+		$('.results').show().text(`Congratulations! You got ${score}/5 questions correct.`);
 		//give option to restart quiz
 		$('.restart').show();
+		} else {
+		$('.results').show().text(`Yikes. You got ${score}/5 questions correct. It's time to study up on your queer history.`);
+	
+		}
 	}
 }); // closes doc.ready function

@@ -6,7 +6,7 @@ const quizData = [
         question: "What anniversay were the marches commemorating?",
         options: ["Martin Luther King's Opposition to War", "Voting Rights Act", "The Stonewall Riots", "Summer of Love"],
         correct_answer: "The Stonewall Riots",
-        correct_feedback: "Yes! The Stonewalls Riots inspired the first gay pride marches",
+        correct_feedback: "Yes! The Stonewalls Riots inspired the first gay pride marches.",
         incorrect_feedback: "Nice try. While that event did happen during the 60's, it was actually The Stonewalls Riots that inspired the first gay pride marches.",
         //photo by Dimitar Belchev
         image: "images/pride.jpg",
@@ -17,7 +17,7 @@ const quizData = [
         question: "What happened as a result of this police raid? ",
         options: ["Patrons fought back which resulted in six days of riots and protests and ultimately prompted more LGTBQ+ political activism.", "Patrons fought back which prompted access to shelter for queer youth 18 and younger who formally didn\’t have homes.", "Patrons fought back which prompted the repeal of all discriminatory laws against LGBTQ+ people.", "All of the above."],
         correct_answer: "Patrons fought back which resulted in six days of riots and protests and ultimately prompted more LGTBQ+ political activism.",
-        correct_feedback: "That's correct! The acts of the brave patrons at Stonewall inspired many throughout the nation.",
+        correct_feedback: "That's correct! The acts of the brave patrons at The Stonewall Inn inspired many throughout the nation.",
         incorrect_feedback: "Sadly, no. The good news is that the six days of riots and protests ultimately prompted more LGTBQ+ political activism.",
         //photo by 
         image: "images/stonewallInn.jpg",
@@ -35,12 +35,12 @@ const quizData = [
         alt: "little girl holding a sign in pride parade"
     },
     {   
-        supporting_info:'"Don\’t Ask, Don\’t Tell" was a law put into effect in 1993, signed by then President Bill Clinton. This law was thought to be liberal as it allowed LGBTQ+ people to serve in the military\, though it also continued to force LGBTQ+ to be silent about their sexual orientation.',
+        supporting_info:'"Don\’t Ask, Don\’t Tell" was a law put into effect in 1993. This law was thought to be liberal as it allowed LGBTQ+ people to serve in the military\, though it also continued to force them to be silent about their sexual orientation.',
         question: "By the year 2009, the miliaty had banned approximtely how many serivce members upon being outed?",
         options: ["27,000", "500", "13,000", "4,000"],
-        correct_answer: "13,000+",
-        correct_feedback: "Correct! 13,000 service members were banned for being honest about who they are.",
-        incorrect_feedback: "Incorrect. It was 13,000 service members who were banned for being honest about who they are.",
+        correct_answer: "13,000",
+        correct_feedback: "Correct! 13,000 service members were banned for being honest about who they were.",
+        incorrect_feedback: "Incorrect. 13,000 service members were banned for being honest about who they were.",
         //photo by 
         image: "images/airForce.jpg",
         alt: "Rainbow shirt underneath U.S Air Force uniform"   

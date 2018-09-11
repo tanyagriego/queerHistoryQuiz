@@ -1,6 +1,5 @@
 @media only screen and (max-width: 640px) {
-
-    .startPage {
+    .coverPhoto {
         background: url("images/cover.jpg");
         /* Full height */
         height: 100%; 
@@ -18,16 +17,44 @@
         z-index: -1;
         opacity: 0.3; 
     }
-    /* .instructions {
-        margin: 120px auto;
-        width: 25%;
-        color: #48A9A6;
-        font-size: 50px;  
-    } */
+
+    .startPage {
+        display: flex;
+        flex-direction: column;
+        max-width: 500;
+        max-width: 2000;
+        text-align: center;
+        width: 100%;
+        margin: 70px auto;
+    }
+        
+    .instructions {
+        margin: 200px auto;
+        width: 100%;
+        color: #6200FF;
+        font-size: 25px;    } 
         
     header {
-        margin-top: 50px;
-        font-size: 250%;
+        margin-top: 125px;
+        margin-bottom: -250px;
+        font-size: 150%;
+        font-weight: bold;
+    } 
+    .beginQuiz {
+        display: block;
+        border: 1px solid white;
+        border-radius: 4px;
+        margin: -185px auto;
+        padding: 15px;
+        background-color: #48A9A6;
+        font-size: 20px;
+        color: ghostwhite;
+    }   
+    .results {
+        width: 89%;
+        margin: 145px auto;
+        color: #6200FF;
+        font-size: 20px;
         font-weight: bold;
     }
 }
@@ -63,12 +90,6 @@
         margin: -190px auto;
     
     }
-/*     
-    .instructions {
-        margin: 120px auto;
-        width: 25%;
-        color: black;
-    } */
         
     header {
         display: flex;
@@ -78,6 +99,4 @@
         padding: 30px auto;
         margin: 100px auto;
     }
-    
-    
-  
+}

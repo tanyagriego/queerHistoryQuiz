@@ -12,11 +12,11 @@ ul {
 .instructions {
     margin: 120px auto;
     width: 25%;
-    color: #7A306C;
+    color: #6200FF;
     font-size: 50px;
     font-weight: bold;
-    text-shadow: black;
-    text-shadow: 2px 2px white;
+    text-shadow: 1px 1px white;
+    te; */
 }
 
 .tagline {
@@ -67,12 +67,13 @@ li > label {
 
 .beginQuiz {
     display: block;
-    border: 1px solid black;
+    border: 1px solid white;
     border-radius: 4px;
     margin: -100px auto;
     padding: 15px;
-    background-color: #F78154;
+    background-color: #48A9A6;
     font-size: 30px;
+    color: ghostwhite;
 }
 
 .beginQuiz:hover {
