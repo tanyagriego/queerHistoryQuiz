@@ -109,7 +109,7 @@ $(document).ready(function() {
 				}
 
 				console.log('Question number', questionNumber);
-			}, 1000);
+			}, 4000);
 		} else {
 			alert('Please select an answer');
 		}
