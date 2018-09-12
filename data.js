@@ -36,7 +36,7 @@ const quizData = [
     },
     {   
         supporting_info:'"Don\’t Ask, Don\’t Tell" was a law put into effect in 1993. This law was thought to be liberal as it allowed LGBTQ+ people to serve in the military\, though it also continued to force them to be silent about their sexual orientation.',
-        question: "By the year 2009, the miliaty had banned approximtely how many serivce members upon being outed?",
+        question: "By the year 2009, the military had banned approximately how many service members upon being outed?",
         options: ["27,000", "500", "13,000", "4,000"],
         correct_answer: "13,000",
         correct_feedback: "Correct! 13,000 service members were banned for being honest about who they were.",
