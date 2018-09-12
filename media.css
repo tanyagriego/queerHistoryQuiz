@@ -34,7 +34,7 @@
         margin: 30px auto;
     }    
     .coverPhoto {
-        background: url("images/cover.jpg");
+        background: url("Images/cover.jpg");
         height: 100%; 
         width: 100%;
         background-position: center;
@@ -107,7 +107,7 @@
   @media only screen and (min-width: 640px) {
   
     .coverPhoto {
-        background: url("images/coverRoad.jpg");
+        background: url("Images/coverRoad.jpg");
         height: 100%; 
         width: 100%;
         background-position: center;
