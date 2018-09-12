@@ -42,7 +42,7 @@ const quizData = [
         correct_feedback: "Correct! 13,000 service members were banned for being honest about who they were.",
         incorrect_feedback: "Incorrect. 13,000 service members were banned for being honest about who they were.",
         //photo by 
-        image: "Images/airForce.jpg",
+        image: "Images/airForce.JPG",
         alt: "Rainbow shirt underneath U.S Air Force uniform"   
     },
     {
