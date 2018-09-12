@@ -9,7 +9,7 @@ const quizData = [
         correct_feedback: "Yes! The Stonewalls Riots inspired the first gay pride marches.",
         incorrect_feedback: "Nice try. While that event did happen during the 60's, it was actually The Stonewalls Riots that inspired the first gay pride marches.",
         //photo by Dimitar Belchev
-        image: "images/pride.jpg",
+        image: "Images/pride.jpg",
         alt: "people at pride march"
     },
     {   
@@ -20,7 +20,7 @@ const quizData = [
         correct_feedback: "That's correct! The acts of the brave patrons at The Stonewall Inn inspired many throughout the nation.",
         incorrect_feedback: "Sadly, no. The good news is that the six days of riots and protests ultimately prompted more LGTBQ+ political activism.",
         //photo by 
-        image: "images/stonewallInn.jpg",
+        image: "Images/stonewallInn.jpg",
         alt: "" 
     },
     {   
@@ -31,7 +31,7 @@ const quizData = [
         correct_feedback: "Yep! National Coming Out Day is observed October 11th of every year.",
         incorrect_feedback: "Incorrect. The year was 1988. National Coming Out Day is observed October 11th of every year.",
         //photo by 
-        image: "images/comingOut.jpg",
+        image: "Images/comingOut.jpg",
         alt: "little girl holding a sign in pride parade"
     },
     {   
@@ -42,7 +42,7 @@ const quizData = [
         correct_feedback: "Correct! 13,000 service members were banned for being honest about who they were.",
         incorrect_feedback: "Incorrect. 13,000 service members were banned for being honest about who they were.",
         //photo by 
-        image: "images/airForce.jpg",
+        image: "Images/airForce.jpg",
         alt: "Rainbow shirt underneath U.S Air Force uniform"   
     },
     {
@@ -53,7 +53,7 @@ const quizData = [
         correct_feedback: "That's right! Do you remember when the entire internet turned into a giant rainbow?", 
         incorrect_feedback: "Incorrect. The victory of marraige equality came on June 26th, 2015",
         //photo by Nick Karvounis on Unsplash
-        image: "images/rings.jpg", 
+        image: "Images/rings.jpg", 
         alt: "two hands wearing wedding rings"
     }, 
 ]
