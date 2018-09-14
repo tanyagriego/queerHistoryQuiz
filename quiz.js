@@ -1,16 +1,33 @@
 'use strict';
 
+//Variable to keep score
+let score = 0;
+//Variable tp store the current index of the question number in the array
+let questionNumber;
+//
+let currentQuestionObject;
+
 $(document).ready(function() {
 	$('.restart').click(function() {
-		location.reload();
+		//location.reload();
+		score = 0;
+		questionNumber = 0;
+		$('.finalPage').hide();
+		$('.startPage').show();
+		$('header').show();
+		$('feedback').show();
+		$('#question').show();
+		$('#supporting_info').show();
+        $('.currentImage').show();
+		$('.submit').show();
+		$('ul').show();
+		$('.progress').show();
+		$('.score').show();
+		$('.progressAndStats').hide();
+		$('#quiz').hide();
 	});
 
-	//Variable to keep score
-	let score = 0;
-	//Variable tp store the current index of the question number in the array
-	let questionNumber;
-	//
-	let currentQuestionObject;
+	
 
 	//Hide the quiz and play again button initially (can do in CSS with display:none)
 	$('#quiz').hide();
@@ -49,6 +66,7 @@ $(document).ready(function() {
 
 	//Populate form with questions and images and hide empty feedback div
 	function populateQuestion() {
+		$('#quiz').show();
 		//This variable represents accessing the current question number inside of the quizData array
 		currentQuestionObject = quizData[questionNumber];
 		// console.log(quizData[questionNumber]);
@@ -82,37 +100,43 @@ $(document).ready(function() {
 			//matched the correct answer or not.
 			const feedbackString = answerFeedback(selectedAnswer, currentQuestionObject);
 			
-
 			//This shows the feedback div and populates it with text explaining the user either was
 			//correct or incorrect
+			$('.feedback').html('');
 			$('.feedback').show().text(feedbackString);
-			//This repopulates the questions div and hides the feedback after 2 seconds,
-			setTimeout(function() {
-				$('ul').show();
-				$('#supporting_info').show();
-				$('#question').show();
-				$('.currentImage').show();
-				$('.submit').show();
-				$('.feedback').hide();
-				$('.finalPage').hide();
-				$('.results').hide();
-				$('.feedback').removeClass("feedback_correct feedback_incorrect");
-				$('.restart').show();
-
-				++questionNumber;
-				if (questionNumber < quizData.length) {
-					populateQuestion();
-					displayProgress(questionNumber, score);
-				} else {
-					finalPage();
-					hideQuizData();
-				}
-
-				console.log('Question number', questionNumber);
-			}, 4000);
+			$('.feedback').append(`<button class="submit next" input type="button">Next</button>`);
+		
 		} else {
 			alert('Please select an answer');
 		}
+	});
+
+	//This repopulates the questions div and hides the feedback after 2 seconds,
+	$('.feedback').on('click','.next',function(e){
+		console.log('here',questionNumber);
+		e.preventDefault();
+		$('ul').show();
+		$('#supporting_info').show();
+		$('#question').show();
+		$('.currentImage').show();
+		$('.submit').show();
+		$('.button-container').hide();
+		$('.feedback').hide();
+		$('.finalPage').hide();
+		$('.results').hide();
+		$('.feedback').removeClass("feedback_correct feedback_incorrect");
+		$('.restart').show();
+		$('.mainQuizSection')[0].reset();
+		++questionNumber;
+		if (questionNumber < quizData.length) {
+			populateQuestion();
+			displayProgress(questionNumber, score);
+		} else {
+			finalPage();
+			hideQuizData();
+		}
+
+		console.log('Question number', questionNumber);
 	});
 
 	//This function compares the users selected answer to the actual correct answer and increases the score if correct.
@@ -134,9 +158,10 @@ $(document).ready(function() {
 	}
 
 	function displayProgress(currentQuestionNumber) {
-		$('.progress').show().text(`Question ${currentQuestionNumber + 1}/5`);
+		$('.progressAndStats').show();
+		$('.progress').show().text(`Question ${currentQuestionNumber + 1}/${quizData.length}`);
 		//console.log('Quiz Status:', currentQuestionNumber)
-		$('.score').show().text(`Correct: ${score}/5`);
+		$('.score').show().text(`Correct: ${score}/${quizData.length}`);
 	}
 
 	//Need some code that shows the finalPage div once the last question has been asked
@@ -147,11 +172,11 @@ $(document).ready(function() {
 		$('.finalPage').show();
 		//display final score
 		if (score >= 4) {
-		$('.results').show().text(`Congratulations! You got ${score}/5 questions correct.`);
+		$('.results').show().text(`Congratulations! You got ${score}/${quizData.length} questions correct.`);
 		//give option to restart quiz
 		$('.restart').show();
 		} else {
-		$('.results').show().text(`Yikes. You got ${score}/5 questions correct. It's time to study up on your queer history.`);
+		$('.results').show().text(`Yikes. You got ${score}/${quizData.length} questions correct. It's time to study up on your queer history.`);
 	
 		}
 	}
