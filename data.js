@@ -55,5 +55,5 @@ const quizData = [
         //photo by Nick Karvounis on Unsplash
         image: "Images/rings.jpg", 
         alt: "two hands wearing wedding rings"
-    }, 
+    } 
 ]

@@ -57,6 +57,7 @@ li > label {
     padding: 15px;
     width: 15%;
     background-color: #eeeeee;
+    font-family: Montserrat,sans-serif;
 }
 
 .beginQuiz {
@@ -76,6 +77,14 @@ li > label {
 
 .submit:hover {
     background-color: #53DD6C
+}
+
+fieldset {
+    border: 0px;
+}
+
+legend {
+    visibility: hidden;
 }
 
 li > label:hover {
@@ -107,6 +116,7 @@ li > label:hover {
 
 .feedback {
     display: flex;
+    flex-direction: column;
     border-radius: 4px;
     margin-top: 100px;
     padding: 30px;
@@ -161,3 +171,10 @@ li > label:hover {
     font-size: 20px;
     font-weight: bold;
 }
+
+/* .next {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 50px;
+} */

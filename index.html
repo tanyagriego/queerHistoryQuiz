@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Queer History</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,23 +14,23 @@
 </head>
 <body>
     <!-- <img class="coverImage"> -->
-    <header class="flex-container">
+    <header class="flex-container" role="banner">
         <meta charset="utf-8" />
     </header>
     <main role="main" class="flex-container">
     <!-- The Start Page -->
-    <section class="startPage">
+    <section class="startPage" role="region">
         <div class="coverPhoto"></div>
         <div class="instructions"></div>
         <button class="beginQuiz" type="button">Queer History</button> 
     </section>  
 
     <!-- The question/feedback page -->
-    <section>
+    <section role= "region">
             <div class="progressAndStats">
-                    <div class="progress"></div>
-                    <div class="score"></div>
-                </div>
+                <div class="progress"></div>
+                <div class="score"></div>
+             </div>
         
         <div id="quiz" class="flex-container">
             <img class="currentImage"> 
@@ -39,6 +39,8 @@
                 <div id="question"></div>
                 <div class="feedback"></div>
                 <ul>
+                    <fieldset>
+                        <legend>Choices</legend>
                     <li>
                         <label>
                             <input name="answers" value="1" type="radio" action="" required method="">
@@ -63,19 +65,15 @@
                             <span id="label4"></span>
                         </label>
                     </li>
+                </fieldset>
                 </ul>
                 <button class="submit" type="submit">Submit</button>
             </form>
         </div>
-        
-        <!-- <div class="progressAndStats">
-            <div class="progress"></div>
-            <div class="score"></div>
-        </div> -->
     </section>
 
     <!-- The final page -->
-    <section class= "finalPage">
+    <section class= "finalPage" role="region">
         <div class=finalPhoto></div>
         <div class="results"></div>
         <button class="restart">Try Again</button>
