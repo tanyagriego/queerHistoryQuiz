@@ -3,7 +3,7 @@
 const quizData = [
     {
         supporting_info: "The first gay pride marches took place on June 28th, 1970 in New York, Los Angeles, San Francisco and Chicago.",
-        question: "What anniversay were the marches commemorating?",
+        question: "What anniversary were the marches commemorating?",
         options: ["Martin Luther King's Opposition to War", "Voting Rights Act", "The Stonewall Riots", "Summer of Love"],
         correct_answer: "The Stonewall Riots",
         correct_feedback: "Yes! The Stonewalls Riots inspired the first gay pride marches.",
