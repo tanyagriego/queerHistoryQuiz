@@ -21,7 +21,7 @@ const quizData = [
         incorrect_feedback: "Sadly, no. The good news is that the six days of riots and protests ultimately prompted more LGTBQ+ political activism.",
         //photo by 
         image: "Images/stonewallInn.jpg",
-        alt: "" 
+        alt: "the stonewall inn window" 
     },
     {   
         supporting_info: '"Most people think they don\'t know anyone gay or lesbian, and in fact everybody does. It is imperative that we come out and let people know who we are and disabuse them of their fears and stereotypes." - Robert Eichberg.',
@@ -32,7 +32,7 @@ const quizData = [
         incorrect_feedback: "Incorrect. The year was 1988. National Coming Out Day is observed October 11th of every year.",
         //photo by 
         image: "Images/comingOut.jpg",
-        alt: "little girl holding a sign in pride parade"
+        alt: "person with 'born this way' written on their jacket"
     },
     {   
         supporting_info:'"Don\’t Ask, Don\’t Tell" was a law put into effect in 1993. This law was thought to be liberal as it allowed LGBTQ+ people to serve in the military\, though it also continued to force them to be silent about their sexual orientation.',
